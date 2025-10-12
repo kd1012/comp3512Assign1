@@ -1,43 +1,39 @@
 <?php
-//Files to be linked, feel free to comment out any of them if they are not neccesary for that exact file
-require_once 'apiTester.php';
-require_once 'index.php';
-
 require_once 'includes/config.inc.php';
-require_once 'includes/DBclass.inc.php';
-require_once 'includes/header.inc.php';
+require_once 'includes/databaseHelper.inc.php';
+require_once 'includes/companiesDB.inc.php';
+require_once 'includes/historyDB.inc.php';
+require_once 'includes/helperFunctions.inc.php';
 
-require_once 'css/common.css';
-require_once 'css/header.css';
+try {
+    $db = new DatabaseHelper(DB_CONNSTRING, DB_USER, DB_PASS);
+    $db->connect();
 
-require_once 'api/companies.php';
-require_once 'api/history.php';
-require_once 'api/portfolio.php';
+    $hisT = new HistoryDB($db);
 
+    $data = $hisT->getAllHistory("MMM");
 
+    $db->disconnect();
+
+} catch (PDOException $e) { die($e->getMessage()); }
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
+    <?php require_once "includes/meta.inc.php";?>
 </head>
-
 <body>
-
+    <?php require_once "includes/header.inc.php";?>
     <main>
-
+    <pre>
+    <?php print_r($data); ?>
+    </pre>
 
     </main>
-
     <footer>
 
     </footer>
-
-
 </body>
-
 </html>
