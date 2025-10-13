@@ -43,7 +43,7 @@ function mkApiTbl($apiList) {
     <?php require_once "includes/header.inc.php";?>
 <main>
     <h2>API List</h2>
-    <?php mkApiTbl($apiList); ?>
+    <?php mkApiTbl(); ?>
 </main>
 <footer>
 

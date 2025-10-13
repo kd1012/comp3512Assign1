@@ -84,7 +84,7 @@ function outputUsersList($customers)
         echo '<span class="name">' . $userrow['lastname'] . ', ' . $userrow['firstname'] . '</span>';
         echo '<form method="get" action="">';
         echo '<input type="hidden" name="userId" value="' . $userrow['id'] . '">';
-        echo '<button type="sumbit" class="button-customers"> Portfolio </button>';
+        echo '<button type="sumbit" class="btn btn-secondary"> Portfolio </button>';
         echo '</form>';
         echo '</li>';
 
@@ -107,12 +107,25 @@ function outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount
 
         echo '<div class="portfolio-summary">';
         echo '<h3>Portfolio Summary</h3>';
-        echo '<div class="summary-card"><span class="summary-label"># Shares</span><span class="summary-value">' . num2Str($portfolioAmount) . '</span></div>';
-        echo '<div class="summary-card total"><span class="summary-label">Total Value</span><span class="summary-value">$' . num2Str($portfolioValue) . '</span></div>';
+        echo '<div class="summary-row">';
+        echo '<div class="summary-card">';
+        echo '<span class="summary-label">Companies</span>';
+        echo '<span class="summary-value">' . num2Str($companyCount) . '</span>';
         echo '</div>';
-
+        echo '<div class="summary-card">';
+        echo '<span class="summary-label"># Shares</span>';
+        echo '<span class="summary-value">' . num2Str($portfolioAmount) . '</span>';
+        echo '</div>';
+        echo '<div class="summary-card total">';
+        echo '<span class="summary-label">Total Value</span>';
+        echo '<span class="summary-value">$' . num2Str($portfolioValue) . '</span>';
+        echo '</div>';
+        echo '</div>'; // summary-row
+        echo '</div>';
     } else {
-        echo '<div class="portfolio-placeholder"><p>Select a customer to view their portfolio.</p></div>';
+        echo '<div class="portfolio-placeholder">';
+        echo '<p>Select a customer to view their portfolio.</p>';
+        echo '</div>';
     }
 
 
@@ -134,8 +147,8 @@ function outputPortfolioList($portfolioList)
         foreach ($portfolioList as $row) {
 
             echo "<tr>";
-            echo "<td><a href='companyPage.php?symbol=" . $row["symbol"] . "'>" . $row["symbol"] . "</td>";
-            echo "<td><a href='companyPage.php?symbol=" . $row["symbol"] . "'>" . $row['name'] . "</td>";
+            echo "<td>" . $row["symbol"] . "</td>";
+            echo "<td>" . $row['name'] . "</td>";
             echo "<td>" . $row['sector'] . "</td>";
             echo "<td>" . $row['amount'] . "</td>";
             echo "<td>$" . number_format($row['value'], 2) . "</td>";
@@ -165,10 +178,10 @@ function outputPortfolioList($portfolioList)
 
     <main class="content-container">
 
-
+        
         <?php outputUsersList($customers); ?>
 
-
+        
         <section class="portfolio-panel">
             <?php
             outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount, $portfolioValue);
