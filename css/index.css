@@ -1,4 +1,4 @@
-.button {
+/* .button {
     padding: 5px 12px;
     margin-left: 10px;
 
@@ -51,4 +51,324 @@ button:hover {
     margin-top: 20px;
     border-radius: 6px;
     max-width: 400px;
+} */
+
+/* ============================================================
+   GLOBAL THEME VARIABLES
+============================================================ */
+:root {
+  --primary-color: #1f4c7f;
+  --accent-color: #0078d7;
+  --success-color: #16a34a;
+  --text-color: #1e293b;
+  --border-color: #d1d5db;
+  --bg-color: #f9fafc;
+  --light-bg: #ffffff;
+  --muted-text: #64748b;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+
+/* ============================================================
+   GENERAL PAGE STYLING
+============================================================ */
+body#indexbody {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   HEADER + FOOTER
+============================================================ */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+header nav a:hover {
+  opacity: 0.85;
+}
+
+footer {
+  text-align: center;
+  background-color: #f1f5f9;
+  color: var(--muted-text);
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   MAIN CONTENT LAYOUT
+============================================================ */
+.content-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   CUSTOMERS PANEL
+============================================================ */
+.customers-panel {
+  background-color: var(--light-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.customers-panel h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.customers-panel h1 {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.customer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.customer-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.customer-list li:last-child {
+  border-bottom: none;
+}
+
+.customer-list .name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.customer-list form {
+  margin: 0;
+}
+
+.customer-list button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.customer-list button:hover {
+  background-color: #005fa3;
+}
+
+/* ============================================================
+   PORTFOLIO PANEL
+============================================================ */
+.portfolio-panel {
+  flex: 1;
+  background-color: var(--light-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  min-width: 400px;
+}
+
+/* Placeholder when no user selected */
+.portfolio-placeholder {
+  text-align: center;
+  color: var(--muted-text);
+  font-style: italic;
+  padding: 4rem 1rem;
+}
+
+/* ============================================================
+   PORTFOLIO SUMMARY
+============================================================ */
+.portfolio-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.portfolio-summary h3 {
+  width: 100%;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.25rem;
+}
+
+.summary-card {
+  flex: 1;
+  background-color: var(--bg-color);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow);
+  min-width: 160px;
+}
+
+.summary-card.total {
+  background-color: #e9f8ec;
+  border-left: 4px solid var(--success-color);
+}
+
+.summary-label {
+  display: block;
+  color: var(--muted-text);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.summary-value {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.summary-card.total .summary-value {
+  color: var(--success-color);
+  font-size: 1.8rem;
+}
+
+/* ============================================================
+   PORTFOLIO DETAILS TABLE
+============================================================ */
+.portfolio-details h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.25rem;
+}
+
+.portfolio-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background-color: var(--light-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.portfolio-table th,
+.portfolio-table td {
+  padding: 0.7rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.portfolio-table th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+}
+
+.portfolio-table tr:nth-child(even) td {
+  background-color: #f3f6fb;
+}
+
+.portfolio-table tr:hover td {
+  background-color: #e7eff9;
+}
+
+/* ============================================================
+   BUTTONS (Shared Style)
+============================================================ */
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.btn-secondary:hover {
+  background-color: #005fa3;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+============================================================ */
+@media (max-width: 900px) {
+  .content-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customers-panel {
+    width: 100%;
+  }
+
+  .portfolio-panel {
+    width: 100%;
+  }
+
+  .portfolio-summary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .summary-card {
+    width: 100%;
+  }
+}
+

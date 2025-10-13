@@ -61,6 +61,20 @@ class PortfolioDB {
 
     }
 
+    public function getPortfolioList ($userId){
+
+        $sql = "SELECT companies.symbol, companies.name, companies.sector, portfolio.amount,
+        portfolio.amount * (SELECT history.close FROM history
+         WHERE history.symbol = portfolio.symbol 
+         ORDER BY history.date DESC LIMIT 1)
+         AS value" . self::$SQL_FROM . "JOIN companies ON portfolio.symbol = companies.symbol WHERE portfolio.userId=?";
+
+
+         return $this->db->fetchAll($sql, $userId) ?? null;
+
+    }
+
+
 }
 
 ?>

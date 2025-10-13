@@ -21,10 +21,12 @@ try {
     //Pulling only firstname, lastname and id
     $customers = $userDB->getCustomers();
 
+
     //Prepping the total values for the Portfolio Summary
     $companyCount = null;
     $portfolioAmount = null;
     $portfolioValue = null;
+    $portfolioList = null;
 
     //the userID from the query string
     $selectedUserId = getUserID();
@@ -36,6 +38,14 @@ try {
         $companyCount = $portDB->getCompaniesCount($selectedUserId);
         $portfolioAmount = $portDB->getSharesSum($selectedUserId);
         $portfolioValue = $portDB->getTotalValue($selectedUserId);
+
+        //Portfolio on userId
+        $portfolioList = $portDB->getPortfolioList($selectedUserId);
+
+        // echo '<pre>';
+        // var_dump($portfolioList);
+        // echo '</pre>';
+
     }
 
 
@@ -62,25 +72,79 @@ function getUserID()
 
 function outputUsersList($customers)
 {
-    echo '<ul>';
+    echo '<div class="customers-panel">';
+    echo '<h1> Customers </h1>';
+    echo '<h3> Name </h3>';
+
+
+    echo '<ul class="customer-list">';
+
     foreach ($customers as $userrow) {
         echo "<li>";
         echo '<span class="name">' . $userrow['lastname'] . ', ' . $userrow['firstname'] . '</span>';
         echo '<form method="get" action="">';
         echo '<input type="hidden" name="userId" value="' . $userrow['id'] . '">';
-        echo '<button type="sumbit"> Portfolio </button>';
+        echo '<button type="sumbit" class="button-customers"> Portfolio </button>';
         echo '</form>';
         echo '</li>';
 
     }
 
     echo '</ul>';
+    echo '</div>';
+
 
 }
 
-function outputPortfolio(){
-    
+function outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount, $portfolioValue)
+{
 
+    /*
+    if a user is seleected then the stuff shows up
+    */
+
+    if ($selectedUserId) {
+
+        echo '<div class="portfolio-summary">';
+        echo '<h3>Portfolio Summary</h3>';
+        echo '<div class="summary-card"><span class="summary-label"># Shares</span><span class="summary-value">' . num2Str($portfolioAmount) . '</span></div>';
+        echo '<div class="summary-card total"><span class="summary-label">Total Value</span><span class="summary-value">$' . num2Str($portfolioValue) . '</span></div>';
+        echo '</div>';
+
+    } else {
+        echo '<div class="portfolio-placeholder"><p>Select a customer to view their portfolio.</p></div>';
+    }
+
+
+}
+
+function outputPortfolioList($portfolioList)
+{
+
+    /*
+    Do stuff if there is things in portfolio list
+    */
+
+    if (!empty($portfolioList)) {
+        echo '<div class="portfolio-details">';
+        echo '<h3>Portfolio Details</h3>';
+        echo "<table class='portfolio-table'>";
+        echo "<tr><th>Symbol</th><th>Name</th><th>Sector</th><th>Amount</th><th>Value</th></tr>";
+
+        foreach ($portfolioList as $row) {
+
+            echo "<tr>";
+            echo "<td>" . $row["symbol"] . "</td>";
+            echo "<td>" . $row['name'] . "</td>";
+            echo "<td>" . $row['sector'] . "</td>";
+            echo "<td>" . $row['amount'] . "</td>";
+            echo "<td>$" . number_format($row['value'], 2) . "</td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+        echo "</div>";
+    }
 }
 
 
@@ -99,33 +163,20 @@ function outputPortfolio(){
 <body id="indexbody">
     <?php require_once "includes/header.inc.php"; ?>
 
-    <h2>Customers</h2>
-    <h1>Name</h1>
+    <main class="content-container">
 
-    
-    <?php
-    outputUsersList($customers);
+        
+        <?php outputUsersList($customers); ?>
 
-    
-    /*
-    if a user is seleected then the stuff shows up
+        
+        <section class="portfolio-panel">
+            <?php
+            outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount, $portfolioValue);
+            outputPortfolioList($portfolioList);
+            ?>
+        </section>
 
-    */
-
-    if ($selectedUserId): ?>
-
-        <div class="portfolio">
-            <h3>Portfolio Summary</h3>
-            <p><strong>User ID:</strong> <?= $selectedUserId ?></p>
-            <p><strong>Companies owned:</strong> <?= number_format(((float) $companyCount), 0) ?></p>
-            <p><strong>Total shares owned:</strong> <?= number_format((float) $portfolioAmount, 0) ?></p>
-            <p><strong>Total portfolio value:</strong> $<?= number_format((float) $portfolioValue, 2) ?></p>
-        </div>
-    <?php endif; ?>
-
-
-    <main>
-
+    </main>
 
 
 
