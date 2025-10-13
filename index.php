@@ -147,8 +147,8 @@ function outputPortfolioList($portfolioList)
         foreach ($portfolioList as $row) {
 
             echo "<tr>";
-            echo "<td>" . $row["symbol"] . "</td>";
-            echo "<td>" . $row['name'] . "</td>";
+            echo "<td><a href='companyPage.php?symbol=" . $row["symbol"] . "'>" . $row["symbol"] . "</td>";
+            echo "<td><a href='companyPage.php?symbol=" . $row["symbol"] . "'>" . $row['name'] . "</td>";
             echo "<td>" . $row['sector'] . "</td>";
             echo "<td>" . $row['amount'] . "</td>";
             echo "<td>$" . number_format($row['value'], 2) . "</td>";
@@ -178,10 +178,10 @@ function outputPortfolioList($portfolioList)
 
     <main class="content-container">
 
-        
+
         <?php outputUsersList($customers); ?>
 
-        
+
         <section class="portfolio-panel">
             <?php
             outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount, $portfolioValue);
