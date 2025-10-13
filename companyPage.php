@@ -11,6 +11,7 @@ $hasValidData = false;
 $compData = []; // Company info
 $hisData = [];  // History table data
 $finData = [];  // Financials table data
+$hasFinData = false;  // Financials table data exists
 $hisHigh = "";  // Historical high
 $hisLow = "";   // Historical low
 $hisTotalVol = ""; // Total volume
@@ -123,6 +124,10 @@ if (isQueryParam(QUERY_PARAM)) {
 
             $finData = CompaniesDB::decodeFinancials($compData["financials"]);
 
+            if (isset($finData) && count($finData) > 0) {
+                $hasFinData = true;
+            }
+
             $hisHigh = dollar2Str($hisDB->getHigh($symbol));
             $hisLow = dollar2Str($hisDB->getLow($symbol));
             $hisTotalVol = num2Str($hisDB->getTotalVolume($symbol));
@@ -180,7 +185,9 @@ if (isQueryParam(QUERY_PARAM)) {
                 <div id="sidebar">
                     <div id="fin_tbl">
                         <h2 id="fin_tbl_header">Financials</h2>
-                        <?php mkFinanceTbl($finData); ?>
+                        <?php if (!$hasFinData) { ?>
+                            <h4 id="fin_tbl_err">Financial Information is not available for this company</h4>
+                        <?php } else { mkFinanceTbl($finData); }?>
                     </div>
 
                     <div class="fin_stat"><h3>Historical High: <?=$hisHigh?></h3></div>

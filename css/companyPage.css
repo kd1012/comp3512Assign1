@@ -64,6 +64,11 @@ table {
     text-align: center;
 }
 
+#fin_tbl_err {
+    text-align: center;
+    padding: 20px;
+}
+
 .fin_stat {
     padding: 10px;
     background-color: #eee;
