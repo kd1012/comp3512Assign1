@@ -36,8 +36,8 @@ class HistoryDB {
         $op = "MAX(high)";
         $sql = "SELECT $op " .
             self::$SQL_FROM .
-            " WHERE symbol=?";
-        return $this->db->fetchAll($sql, $symbol)[0]["$op"];
+            " WHERE symbol=? LIMIT 1";
+        return $this->db->fetchAll($sql, $symbol)[0]["$op"] ?? null;
     }
 
     /*
@@ -47,8 +47,8 @@ class HistoryDB {
         $op = "MIN(low)";
         $sql = "SELECT $op " .
             self::$SQL_FROM .
-            " WHERE symbol=?";
-        return $this->db->fetchAll($sql, $symbol)[0]["$op"];
+            " WHERE symbol=? LIMIT 1";
+        return $this->db->fetchAll($sql, $symbol)[0]["$op"] ?? null;
     }
 
     /*
@@ -58,8 +58,8 @@ class HistoryDB {
         $op = "SUM(volume)";
         $sql = "SELECT $op " .
             self::$SQL_FROM .
-            " WHERE symbol=?";
-        return $this->db->fetchAll($sql, $symbol)[0]["$op"];
+            " WHERE symbol=? LIMIT 1";
+        return $this->db->fetchAll($sql, $symbol)[0]["$op"] ?? null;
     }
 
     /*
@@ -69,8 +69,8 @@ class HistoryDB {
         $op = "AVG(volume)";
         $sql = "SELECT $op " .
             self::$SQL_FROM .
-            " WHERE symbol=?";
-        return $this->db->fetchAll($sql, $symbol)[0]["$op"];
+            " WHERE symbol=? LIMIT 1";
+        return $this->db->fetchAll($sql, $symbol)[0]["$op"] ?? null;
     }
 
 }

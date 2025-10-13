@@ -23,8 +23,8 @@ class PortfolioDB {
         $op = "COUNT(id)";
         $sql = "SELECT $op " .
             self::$SQL_FROM .
-            " WHERE userId=?";
-        return $this->db->fetchAll($sql, $userId)[0]["$op"];;
+            " WHERE userId=? LIMIT 1";
+        return $this->db->fetchAll($sql, $userId)[0]["$op"] ?? null;
     }
 
     /*
@@ -47,7 +47,7 @@ class PortfolioDB {
 
     /*
     * The total value is the value of the users portfolio can be determined by adding the value
-    (closing stock price of the last history record fo that stock * amount of stock owned) for each of the stocks 
+    (closing stock price of the last history record fo that stock * amount of stock owned) for each of the stocks
     in the portfolio
     *
     */

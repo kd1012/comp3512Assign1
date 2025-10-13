@@ -10,7 +10,7 @@ function dollar2Str($value) {
         $decimals = 0;
     }
 
-    return "$ " . number_format($value, $decimals);
+    return "$&nbsp" . number_format($value, $decimals);
 }
 
 /*
@@ -20,5 +20,11 @@ function num2Str($value) {
     return number_format($value, 0);
 }
 
+/*
+ * Returns true if the query parameter $name is not empty.
+ */
+function isQueryParam($name) {
+    return isset($_GET[$name]) && $_GET[$name] != "";
+}
 
 ?>

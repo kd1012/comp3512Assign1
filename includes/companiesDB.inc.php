@@ -23,8 +23,8 @@ class CompaniesDB {
         $sql = "SELECT symbol, name, sector, subindustry, address,
             exchange, website, description, financials " .
             self::$SQL_FROM .
-            " WHERE symbol=?";
-        return $this->db->fetchAll($sql, $symbol);
+            " WHERE symbol=? LIMIT 1";
+        return $this->db->fetchAll($sql, $symbol)[0] ?? [];
     }
 
     /*
@@ -35,7 +35,7 @@ class CompaniesDB {
             return [];
         }
 
-        return json_decode($financials);
+        return json_decode($financials, $associative=true);
     }
 
     // /*
