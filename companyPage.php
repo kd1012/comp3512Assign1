@@ -107,7 +107,7 @@ function mkFinanceTbl($finData) {
 
 if (isQueryParam(QUERY_PARAM)) {
     try {
-        $symbol = $_GET[QUERY_PARAM];
+        $symbol = strtoupper($_GET[QUERY_PARAM]);
 
         $db = new DatabaseHelper(DB_CONNSTRING, DB_USER, DB_PASS);
         $db->connect();
