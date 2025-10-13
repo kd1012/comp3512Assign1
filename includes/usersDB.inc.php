@@ -28,7 +28,7 @@ class UsersDB {
         return $this->db->fetchAll($sql);
     }
 
-
+  
 
 
     // TODO: If we need to JOIN tables, do it in the class that will be the FROM table.

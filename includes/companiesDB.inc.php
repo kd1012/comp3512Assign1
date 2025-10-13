@@ -37,6 +37,21 @@ class CompaniesDB {
 
         return json_decode($financials);
     }
+
+    // /*
+    // returns the count of the companies tied to that userId
+    // */
+    public function getCompanyCountfromUserID($userID){
+        $sql = "SELECT COUNT(DISTINCT companies.symbol)" . self::$SQL_FROM
+        . "INNER JOIN portfolio on companies.symbol = portfolio.symbol
+        WHERE portfolio.userId = companies.userId";
+
+        return $this->db->fetchAll($sql, $userID);
+
+    }
+
+
+
 }
 
 ?>
