@@ -30,30 +30,35 @@ class PortfolioDB {
     /*
      * @Kiera
      *
-     * When using SQL function such as COUNT or SUM that return a single value, instead of an array of values like a normal SELECT id, ...
-     * php still treats it the same as that normal select when building the array.
-     * So if a fetchAll on a normal select returns an array like this:
+     * When using SQL function such as COUNT or SUM that return a single value (ie, the count or sum),
+     * instead of an array of values like a normal "SELECT id, ... FROM ..." that returns multiple rows of data,
+     * php still builds the array the same for both.
+     * So if a fetchAll on a "SELECT id, name FROM ..." returns an array like this:
      *  [
      *      ["id" => 1, "name" => "Kiera"],
      *      ["id" => 2, "name" => "Diesel"],
      *      ["id" => 3, ...]
      *  ]
      *
-     * A SELECT COUNT(myColumn) of records will return an array like this:
+     * A "SELECT COUNT(id) FROM ..." of records will return an array like this:
      *  [
-     *      ["COUNT(myColumn)" => 1234]
+     *      ["COUNT(id)" => 3]
      *  ]
      *
-     * So, when returning a value from a function such as getCompaniesCount(), we can cheat a bit and remove the extra arrays
-     * by first getting the index 0 value from the outer array: ["COUNT(myColumn)" => 1234],
-     * and then getting the value of the key from what ever operation we did: 1234
+     * So, when returning a value from a function such as getCompaniesCount(),
+     * we can cheat a bit and remove the extra arrays since we know that the SQL query will only be returning a single value.
+     * This is instead of doing the same thing after we have called the function in our main php code.
      *
-     * This is what the [0][$op] on the end of the fetchAll is for.
-     * The $op variable is the operation we are doing (COUNT(...), SUM(...), etc), its there just so we dont have to type it twice
-     * in the SQL and at the end of the fetchAll statement.
      *
-     * The ?? null is there so that if fetchAll returns an empty array, php doesn't freakout and throw warnings about trying to access
-     * a invalid array element, and instead returns null from the function.
+     * First we get the value at index 0 from the outer array, giving us: ["COUNT(myColumn)" => 1234],
+     * and then get the value of the key from what ever operation we did, giving us: 1234
+     *
+     * This is what the [0][$op] on the end of the fetchAll is for. (See getCompaniesCount() above)
+     * The $op variable is the operation we are doing (COUNT(...), SUM(...), etc),
+     * its there just so we dont have to type it twice in the SQL and at the end of the fetchAll statement.
+     *
+     * The "?? null" is there so that if fetchAll returns an empty array, php doesn't freak out and throw warnings about trying to access
+     * a invalid array element, and instead "?? null" will returns null from the function.
      *
      * Also, dont use wildcards (the * symbol) in your SQL, Randy says its bad practice.
      *

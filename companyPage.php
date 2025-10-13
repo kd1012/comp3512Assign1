@@ -11,13 +11,13 @@ $hasValidData = false;
 $compData = []; // Company info
 $hisData = [];  // History table data
 $finData = [];  // Financials table data
-$hisHigh = "";
-$hisLow = "";
-$hisTotalVol = "";
-$hisAvgVol = "";
+$hisHigh = "";  // Historical high
+$hisLow = "";   // Historical low
+$hisTotalVol = ""; // Total volume
+$hisAvgVol = "";   // Average volume
 
 /*
- *
+ * Empty format function, needed for mkHistoryTbl().
  */
 function noFormat($value) {
     return $value;
@@ -27,8 +27,9 @@ function noFormat($value) {
  * Builds the history table from the history data.
  */
 function mkHistoryTbl($hisData) {
-    // Key is SQL column name, value is  [display name, format function]
-    // For the format function syntax see: https://www.php.net/manual/en/functions.variable-functions.php
+    // Key is SQL column name, value is [display name, format function]
+    // Putting functions into variables is weird in php,
+    // see: https://www.php.net/manual/en/functions.variable-functions.php
     $tblHeaders = [
         "date" => ["Date", "noFormat"],
         "volume" => ["Volume", "num2Str"],

@@ -14,7 +14,7 @@ function dollar2Str($value) {
 }
 
 /*
- * Formats numbers nicely.
+ * Formats large numbers nicely.
  */
 function num2Str($value) {
     return number_format($value, 0);

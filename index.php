@@ -1,22 +1,17 @@
 <?php
-//Files to be linked, feel free to comment out any of them if they are not neccesary for that exact file
-require_once 'apiTester.php';
-
 require_once 'includes/config.inc.php';
-require_once 'includes/header.inc.php';
-require_once 'includes/companiesDB.inc.php';
 require_once 'includes/databaseHelper.inc.php';
+require_once 'includes/companiesDB.inc.php';
 require_once 'includes/portfolioDB.inc.php';
 require_once 'includes/historyDB.inc.php';
 require_once 'includes/usersDB.inc.php';
+require_once 'includes/helperFunctions.inc.php';
 
-
-require_once 'api/companies.php';
-require_once 'api/history.php';
-require_once 'api/portfolio.php';
-
-
-
+/*
+ * @Kiera
+ *
+ * See my comments at the bottom of this file, and in portfolioDB.inc.php
+ */
 
 try {
     $db = new DatabaseHelper(DB_CONNSTRING, DB_USER, DB_PASS);
@@ -31,7 +26,7 @@ try {
     $userDB = new UsersDB($db);
 
     $userData = $userDB ->getAllUsers();
-    
+
     $customers = $userDB ->getCustomers();
 
     $companyCount = null;
@@ -41,7 +36,7 @@ try {
     $selectedUserId = getUserID();
 
     echo $selectedUserId;
-    
+
     if($selectedUserId) {
 
         $companyCount = $portDB ->getCompaniesCount($selectedUserId);
@@ -49,7 +44,7 @@ try {
         echo "outside";
         $portfolioValue = $portDB ->getTotalValue($selectedUserId);
 
-    } 
+    }
 
 
     $db->disconnect();
@@ -77,11 +72,8 @@ function getUserID(){
 <html lang="en">
 
 <head>
-<head>
     <?php require_once "includes/meta.inc.php";?>
     <link rel="stylesheet" href="css/index.css">
-</head>
-
 </head>
 
 <body id="indexbody">
@@ -93,7 +85,7 @@ function getUserID(){
 
     <ul>
 
-<?php 
+<?php
 
 // foreach($customers as $user){
 
@@ -111,12 +103,12 @@ foreach ($customers as $user): ?>
             <button type="submit">Portfolio</button>
         </form>
     </li>
-<?php endforeach; 
+<?php endforeach;
 ?>
 </ul>
 
 
-<?php 
+<?php
 /*
 if a user is seleected then the stuff shows up
 
@@ -154,4 +146,31 @@ if ($selectedUserId): ?>
 
 //$db->disconnect();
 
+
+/*
+ * @Kiera
+ *
+ * getCompaniesCount(), getSharesSum(), and getTotalValue() are showing up as 1 because they are actually returning arrays.
+ * Apparently number_format, or maybe the cast to float turns them into 1, presumably because that is the number of elements in the array.
+ * I have fixed getCompaniesCount() in portfolioDB.inc.php, see the note in there for a more detailed explanation of the problem and the solution.
+ *
+ * Some other recommendations I have,
+ * For the most part, you shouldn't need to cast variables, php is pretty good at figuring it out, and it could cause weird issues with int to floats
+ *
+ * (I know your prototyping right now, so this probably doesn't matter just yet, but) try to keep most of your php code before the <html> starts.
+ * Try to either save the needed data into variables, or create functions to generate the html, then call/use them inside the html. See companyPage.php
+ *
+ * I have made some helper function available in helperFunctions.inc.php. Feel free to add to this file! Specifically, I have some formatting functions for
+ * dollar values and large numbers (dollar2Str() and num2Str()) that add the $ sign and commas so that formatting will be consistent.
+ * Feel free to use your own number_format() if you want though!
+ *
+ * Also, since companyPage is effectively done, feel free to steal techniques and things from there.
+ *
+ *
+ * For the record, I don't mean any of this in a condescending way. You are doing a great job! and I'm glad that you are my partner!
+ *
+ */
+
+
 ?>
+
