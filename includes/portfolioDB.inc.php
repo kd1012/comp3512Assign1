@@ -6,7 +6,7 @@
  * Similar to those in lab14a
  */
 class PortfolioDB {
-    private static $SQL_FROM = "FROM portfolio";
+    private static $SQL_FROM = " FROM portfolio ";
     private $db;
 
     /*
@@ -20,8 +20,8 @@ class PortfolioDB {
      * Returns the number of companies on a users portfolio.
      */
     public function getCompaniesCount($userId) {
-        $op = "COUNT(id)";
-        $sql = "SELECT $op " .
+
+        $sql = "SELECT COUNT(*)" .
             self::$SQL_FROM .
             " WHERE userId=? LIMIT 1";
         return $this->db->fetchAll($sql, $userId)[0]["$op"] ?? null;
@@ -34,14 +34,10 @@ class PortfolioDB {
     */
 
     public function getSharesSum ($userId){
-        $sql = "SELECT amount" . self::$SQL_FROM . "WHERE userID=". $userId . ";";
+        $sql = "SELECT SUM(amount)" . self::$SQL_FROM . "WHERE userId=?";
+      //  echo "getsharesSum";
 
-        $sum = 0.0;
-        while ($row = $this->db->fetch(PDO::FETCH_ASSOC)){
-            $sum += $row["amount"];
-
-        }
-        return $sum;
+        return $this->db->fetchAll($sql, $userId);
 
     }
 
@@ -52,11 +48,18 @@ class PortfolioDB {
     *
     */
 
+
+
     public function getTotalValue ($userID){
+
+      //  echo "getTotalValuefirst";
+
 
         $sql = "SELECT SUM (portfolio.amount * (
         SELECT history.close from history WHERE history.symbol = portfolio.symbol ORDER BY history.date DESC LIMIT 1)
-        ) as total_value" . self::$SQL_FROM . "WHERE portfolio.userID = " . $userID . ";";
+        ) as total_value" . self::$SQL_FROM . "WHERE portfolio.userID=?";
+
+       // echo "getTotalValue";
 
         return $this->db->fetchAll($sql, $userID);
 

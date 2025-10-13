@@ -1,0 +1,54 @@
+.button {
+    padding: 5px 12px;
+    margin-left: 10px;
+
+
+}
+
+select {
+    font-size: 1rem;
+    padding: 5px 10px;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    flex: 1;
+}
+
+form {
+    display: inline;
+    margin-left: 10px;
+}
+
+button {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005EA6;
+}
+
+.portfolio {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 6px;
+    max-width: 400px;
+}
