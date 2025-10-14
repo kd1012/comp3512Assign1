@@ -71,7 +71,7 @@ function mkHistoryTbl($hisData) {
  * Builds the financials table from the finance info.
  */
 function mkFinanceTbl($finData) {
-    echo "<table>";
+    echo '<table class="finance-table">';
 
     // Year is special
     echo "<tr>";
@@ -148,10 +148,11 @@ if (isQueryParam(QUERY_PARAM)) {
 <head>
     <?php require_once "includes/meta.inc.php";?>
     <link rel="stylesheet" href="css/companyPage.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
-<body>
+<body id="companybody">
     <?php require_once "includes/header.inc.php";?>
-    <main>
+    <main class="company-container">
         <?php if (!$hasValidData) { ?>
 
             <div id="symbol_err">

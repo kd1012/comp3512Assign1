@@ -1,5 +1,107 @@
-header {
+/* ============================================================
+   HEADER STYLES — matches site theme
+============================================================ */
+:root {
+  --primary-color: #1f4c7f;
+  --accent-color: #0078d7;
+  --text-color: #1e293b;
+  --bg-color: #f9fafc;
+  --light-bg: #ffffff;
+  --muted-text: #64748b;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
 
-    border: 1px solid #000; /* FOR TESTING */
-    width: 100%
+/* ============================
+   HEADER CONTAINER
+============================ */
+.site-header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  box-shadow: var(--shadow);
+  font-family: var(--font-family);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ============================
+   LEFT SIDE: TITLE
+============================ */
+.header-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.header-subtitle {
+  display: block;
+  font-size: 0.85rem;
+  color: #dce6f5;
+  margin-top: 0.15rem;
+}
+
+/* ============================
+   RIGHT SIDE: NAVIGATION
+============================ */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links a {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.nav-links a:hover {
+  background-color: #005fa3;
+  transform: translateY(-1px);
+}
+
+.nav-links a:active {
+  transform: translateY(0);
+}
+
+/* ============================
+   RESPONSIVE LAYOUT
+============================ */
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .header-title {
+    font-size: 1rem;
+  }
+
+  .header-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .nav-links a {
+    flex: 1;
+    text-align: center;
+    margin: 0.2rem 0;
+  }
 }
