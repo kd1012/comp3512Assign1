@@ -75,6 +75,18 @@ class PortfolioDB {
 
     }
 
+    public function getAllPortfolio($userID){
+
+        $sql = "SELECT " . 
+        self::$SQL_ALL_ATTRS . 
+        self::$SQL_FROM . 
+        "WHERE userId=?";
+
+        return $this->db->fetchAll($sql, $userID) ?? null;
+
+
+    }
+
 
 }
 

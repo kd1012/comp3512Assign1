@@ -1,0 +1,39 @@
+<?php
+require_once '../includes/config.inc.php';
+require_once '../includes/databaseHelper.inc.php';
+require_once '../includes/portfolioDB.inc.php';
+require_once '../includes/helperFunctions.inc.php';
+
+define("QUERY_PARAM", "ref");
+
+$portData = [];
+$hasValidData = false;
+
+try {
+    $db = new DatabaseHelper(DB_CONNSTRING, DB_USER, DB_PASS);
+    $db->connect();
+
+    $portDB = new PortfolioDB($db);
+
+    if (isQueryParam(QUERY_PARAM)) {
+        $selectedUserId = strtoupper($_GET[QUERY_PARAM]);
+
+        // Put single portfolio in an array to be consistent
+        // with the output of getAllPortfolio
+        $portData = [$portDB->getAllPortfolio($selectedUserId)];
+
+    } 
+
+    $db->disconnect();
+    $hasValidData = true;
+
+} catch (PDOException $e) { die($e->getMessage()); }
+
+// Ensure Content-Type does not get set if we have an error
+if ($hasValidData) {
+    header('Content-Type: application/json');
+    echo json_encode($portData, JSON_NUMERIC_CHECK + JSON_PRETTY_PRINT);
+}
+?>
+
+
