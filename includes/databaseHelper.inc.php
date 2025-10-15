@@ -3,7 +3,7 @@
 /*
  * Helper class for PDO.
  *
- * Heavily modified from DatabaseHelper in lab14a.
+ * Largely modified from DatabaseHelper in lab14a.
  */
 class DatabaseHelper {
     private $pdo;

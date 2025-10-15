@@ -6,7 +6,13 @@
  * Similar to those in lab14a
  */
 class HistoryDB {
-    private static $SQL_FROM = " FROM history ";
+    public const ORDER_NONE = 0;
+    public const ORDER_DESC = 1;
+    public const ORDER_ASC  = 2;
+
+    private static $SQL_FROM = "FROM history ";
+    private static $SQL_ALL_ATTRS = "id, symbol, date, volume,
+                                    open, close, high, low ";
     private $db;
 
     /*
@@ -21,11 +27,20 @@ class HistoryDB {
      *
      * Sorted by descending date.
      */
-    public function getAllHistory($symbol) {
-        $sql = "SELECT symbol, date, volume, open, close, high, low" .
+    public function getHistory($symbol, $order=self::ORDER_DESC) {
+        $orderSql = "";
+
+        if ($order == 1) {
+            $orderSql = "ORDER BY date DESC";
+        } elseif ($order == 2) {
+            $orderSql = "ORDER BY date ASC";
+        }
+
+        $sql = "SELECT " .
+            self::$SQL_ALL_ATTRS .
             self::$SQL_FROM .
-            "WHERE symbol=?" .
-            " ORDER BY date DESC";
+            "WHERE symbol=? " .
+            $orderSql;
         return $this->db->fetchAll($sql, $symbol);
     }
 
@@ -34,7 +49,7 @@ class HistoryDB {
      */
     public function getHigh($symbol) {
         $op = "MAX(high)";
-        $sql = "SELECT $op" .
+        $sql = "SELECT $op " .
             self::$SQL_FROM .
             "WHERE symbol=? LIMIT 1";
         return $this->db->fetchAll($sql, $symbol)[0][$op] ?? null;
@@ -45,7 +60,7 @@ class HistoryDB {
      */
     public function getLow($symbol) {
         $op = "MIN(low)";
-        $sql = "SELECT $op" .
+        $sql = "SELECT $op " .
             self::$SQL_FROM .
             "WHERE symbol=? LIMIT 1";
         return $this->db->fetchAll($sql, $symbol)[0][$op] ?? null;
@@ -56,7 +71,7 @@ class HistoryDB {
      */
     public function getTotalVolume($symbol) {
         $op = "SUM(volume)";
-        $sql = "SELECT $op" .
+        $sql = "SELECT $op " .
             self::$SQL_FROM .
             "WHERE symbol=? LIMIT 1";
         return $this->db->fetchAll($sql, $symbol)[0][$op] ?? null;
@@ -67,7 +82,7 @@ class HistoryDB {
      */
     public function getAverageVolume($symbol) {
         $op = "AVG(volume)";
-        $sql = "SELECT $op" .
+        $sql = "SELECT $op " .
             self::$SQL_FROM .
             "WHERE symbol=? LIMIT 1";
         return $this->db->fetchAll($sql, $symbol)[0][$op] ?? null;

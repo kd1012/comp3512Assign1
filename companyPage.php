@@ -120,7 +120,7 @@ if (isQueryParam(QUERY_PARAM)) {
 
         if (isset($compData) && count($compData) > 0) {
             // Company symbol is valid
-            $hisData = $hisDB->getAllHistory($symbol);
+            $hisData = $hisDB->getHistory($symbol);
 
             $finData = CompaniesDB::decodeFinancials($compData["financials"]);
 

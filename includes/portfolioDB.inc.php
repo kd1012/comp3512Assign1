@@ -6,7 +6,8 @@
  * Similar to those in lab14a
  */
 class PortfolioDB {
-    private static $SQL_FROM = " FROM portfolio ";
+    private static $SQL_FROM = "FROM portfolio ";
+    private static $SQL_ALL_ATTRS = "id, userId, guid, symbol, amount ";
     private $db;
 
     /*
@@ -21,7 +22,7 @@ class PortfolioDB {
      */
     public function getCompaniesCount($userId) {
         $op = "COUNT(id)";
-        $sql = "SELECT $op" .
+        $sql = "SELECT $op " .
             self::$SQL_FROM .
             "WHERE userId=? LIMIT 1";
         return $this->db->fetchAll($sql, $userId)[0][$op] ?? null;
@@ -36,7 +37,7 @@ class PortfolioDB {
     public function getSharesSum ($userId){
 
         $op = "SUM(amount)";
-        $sql = "SELECT $op" .
+        $sql = "SELECT $op " .
             self::$SQL_FROM .
             "WHERE userId=?";
 
@@ -53,7 +54,7 @@ class PortfolioDB {
     public function getTotalValue ($userID){
 
         $op = "SUM(portfolio.amount * (SELECT history.close FROM history WHERE history.symbol = portfolio.symbol ORDER BY history.date DESC LIMIT 1))";
-        $sql = "SELECT $op" . self::$SQL_FROM .
+        $sql = "SELECT $op " . self::$SQL_FROM .
             "WHERE userId=?";
 
         $result = $this->db->fetchAll($sql, $userID);
@@ -65,9 +66,9 @@ class PortfolioDB {
 
         $sql = "SELECT companies.symbol, companies.name, companies.sector, portfolio.amount,
         portfolio.amount * (SELECT history.close FROM history
-         WHERE history.symbol = portfolio.symbol 
+         WHERE history.symbol = portfolio.symbol
          ORDER BY history.date DESC LIMIT 1)
-         AS value" . self::$SQL_FROM . "JOIN companies ON portfolio.symbol = companies.symbol WHERE portfolio.userId=?";
+         AS value " . self::$SQL_FROM . "JOIN companies ON portfolio.symbol = companies.symbol WHERE portfolio.userId=?";
 
 
          return $this->db->fetchAll($sql, $userId) ?? null;

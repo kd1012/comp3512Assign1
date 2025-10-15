@@ -16,7 +16,6 @@ try {
     $portDB = new PortfolioDB($db);
     $compDB = new CompaniesDB($db);
     $userDB = new UsersDB($db);
-    $userData = $userDB->getAllUsers();
 
     //Pulling only firstname, lastname and id
     $customers = $userDB->getCustomers();

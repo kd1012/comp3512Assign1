@@ -6,7 +6,10 @@
  * Similar to those in lab14a
  */
 class CompaniesDB {
-    private static $SQL_FROM = " FROM companies ";
+    private static $SQL_FROM = "FROM companies ";
+    private static $SQL_ALL_ATTRS = "symbol, name, sector, subindustry,
+                                    address, exchange, website, description,
+                                    latitude, longitude, financials ";
     private $db;
 
     /*
@@ -20,11 +23,24 @@ class CompaniesDB {
      * Returns all the information about a company from their symbol.
      */
     public function getCompanyInfo($symbol) {
-        $sql = "SELECT symbol, name, sector, subindustry, address,
-            exchange, website, description, financials" .
+        $sql = "SELECT " .
+            self::$SQL_ALL_ATTRS .
             self::$SQL_FROM .
             "WHERE symbol=? LIMIT 1";
         return $this->db->fetchAll($sql, $symbol)[0] ?? [];
+    }
+
+    /*
+     * Returns all information about all companies.
+     */
+    public function getAllCompanies() {
+        // Note: probably best to return a reduced set of information
+        // (e.g. symbol, name, description) when returning all companies,
+        // However, API requirements did not specify.
+        $sql = "SELECT " .
+            self::$SQL_ALL_ATTRS .
+            self::$SQL_FROM;
+        return $this->db->fetchAll($sql);
     }
 
     /*

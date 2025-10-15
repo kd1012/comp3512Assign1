@@ -6,7 +6,10 @@
  * Similar to those in lab14a
  */
 class UsersDB {
-    private static $SQL_FROM = "FROM users";
+    private static $SQL_FROM = "FROM users ";
+    private static $SQL_ALL_ATTRS = "id, firstname, lastname, city,
+                                    country, email, password, salt,
+                                    password_sha256 ";
     private $db;
 
     /*
@@ -24,16 +27,9 @@ class UsersDB {
     public function getCustomers() {
         $sql = "SELECT id, firstname, lastname " .
             self::$SQL_FROM .
-            " ORDER BY lastname ASC";
+            "ORDER BY lastname ASC";
         return $this->db->fetchAll($sql);
     }
-
-  public function getAllUsers(){
-
-    $sql = "SELECT * " . self::$SQL_FROM;
-
-    return $this->db->fetchAll($sql);
-  }
 
 
 
