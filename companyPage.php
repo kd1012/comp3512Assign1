@@ -148,7 +148,6 @@ if (isQueryParam(QUERY_PARAM)) {
 <head>
     <?php require_once "includes/meta.inc.php";?>
     <link rel="stylesheet" href="css/companyPage.css">
-    <link rel="stylesheet" href="css/header.css">
 </head>
 <body id="companybody">
     <?php require_once "includes/header.inc.php";?>

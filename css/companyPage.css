@@ -50,8 +50,6 @@ table {
 }
 
 #sidebar {
-    top: 10px;
-    position: sticky;
     display: grid;
     gap: 10px;
 }
