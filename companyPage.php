@@ -147,9 +147,12 @@ if (isQueryParam(QUERY_PARAM)) {
 <html lang="en">
 <head>
     <?php require_once "includes/meta.inc.php";?>
+    <link rels="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/companyPage.css">
 </head>
 <body id="companybody">
+    
+    
     <?php require_once "includes/header.inc.php";?>
     <main class="company-container">
         <?php if (!$hasValidData) { ?>
@@ -189,7 +192,6 @@ if (isQueryParam(QUERY_PARAM)) {
                             <h4 id="fin_tbl_err">Financial Information is not available for this company</h4>
                         <?php } else { mkFinanceTbl($finData); }?>
                     </div>
-
                     <div class="fin_stat"><h3>Historical High: <?=$hisHigh?></h3></div>
                     <div class="fin_stat"><h3>Historical Low: <?=$hisLow?></h3></div>
                     <div class="fin_stat"><h3>Total Volume: <?=$hisTotalVol?></h3></div>
