@@ -1,32 +1,10 @@
-/* ============================================================
-   ABOUT PAGE — matches index.css & companyPage.css styling
-============================================================ */
-:root {
-  --primary-color: #1f4c7f;
-  --accent-color: #0078d7;
-  --success-color: #16a34a;
-  --text-color: #1e293b;
-  --border-color: #d1d5db;
-  --bg-color: #f9fafc;
-  --light-bg: #ffffff;
-  --muted-text: #64748b;
-  --radius: 8px;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
+/*
+Css for the About Page
 
-/* ============================================================
-   BASE
-============================================================ */
-body#aboutbody {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+see comment about AI on the Common.css page
+
+*/
+
 
 main.about-container {
   max-width: 900px;
@@ -37,47 +15,35 @@ main.about-container {
   gap: 1.5rem;
 }
 
-/* ============================================================
-   HEADER SECTION
-============================================================ */
 .about-header {
   text-align: center;
   margin-bottom: 1rem;
 }
 
 .about-header h1 {
-  color: var(--primary-color);
-  font-size: 4rem;
+  font-size: 2rem;
   margin-bottom: 0.3rem;
 }
 
 .about-header .subtitle {
-  font-size: 3rem;
+  font-size: 1rem;
   color: var(--muted-text);
 }
 
-/* ============================================================
-   CARD STYLING
-============================================================ */
 .about-card {
-  background-color: var(--light-bg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
   padding: 1.5rem 2rem;
   border-left: 4px solid var(--primary-color);
 }
 
 .about-card h2 {
   margin-top: 0;
-  font-size: 2rem;
-  color: var(--primary-color);
+  font-size: 1.25rem;
   margin-bottom: 0.75rem;
 }
 
 .about-card p {
   line-height: 1.6;
   font-size: 0.95rem;
-  color: var(--text-color);
 }
 
 .about-card ul {
@@ -95,14 +61,9 @@ main.about-container {
   color: var(--primary-color);
 }
 
-/* ============================================================
-   GIT LINK
-============================================================ */
 .git-link {
   color: var(--accent-color);
   word-break: break-all;
-  font-weight: 500;
-  text-decoration: none;
 }
 
 .git-link:hover {
@@ -111,9 +72,6 @@ main.about-container {
 }
 
 
-/* ============================================================
-   RESPONSIVE
-============================================================ */
 @media (max-width: 768px) {
   main.about-container {
     padding: 1rem;
@@ -123,7 +81,4 @@ main.about-container {
     padding: 1.25rem 1.5rem;
   }
 
-  .about-header h1 {
-    font-size: 1.6rem;
-  }
 }

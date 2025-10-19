@@ -60,6 +60,7 @@ function mkApiTbl($apiList) {
 <html lang="en">
 <head>
     <?php require_once "includes/meta.inc.php";?>
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/apiTester.css">
 </head>
 <body id="apibody">

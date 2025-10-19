@@ -1,21 +1,10 @@
-/* ============================================================
-   HEADER STYLES — matches site theme
-============================================================ */
-:root {
-  --primary-color: #1f4c7f;
-  --accent-color: #0078d7;
-  --text-color: #1e293b;
-  --bg-color: #f9fafc;
-  --light-bg: #ffffff;
-  --muted-text: #64748b;
-  --radius: 8px;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
+/*
+Css for the Header Page
 
-/* ============================
-   HEADER CONTAINER
-============================ */
+see comment about AI on the Common.css page
+
+*/
+/* HEADER */
 .site-header {
   background-color: var(--primary-color);
   color: #ffffff;
@@ -24,15 +13,11 @@
   align-items: center;
   padding: 0.75rem 2rem;
   box-shadow: var(--shadow);
-  font-family: var(--font-family);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-/* ============================
-   LEFT SIDE: TITLE
-============================ */
 .header-title {
   font-size: 1.15rem;
   font-weight: 600;
@@ -46,9 +31,6 @@
   margin-top: 0.15rem;
 }
 
-/* ============================
-   RIGHT SIDE: NAVIGATION
-============================ */
 .nav-links {
   display: flex;
   align-items: center;
@@ -74,9 +56,7 @@
   transform: translateY(0);
 }
 
-/* ============================
-   RESPONSIVE LAYOUT
-============================ */
+
 @media (max-width: 700px) {
   .site-header {
     flex-direction: column;

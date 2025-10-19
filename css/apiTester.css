@@ -1,33 +1,9 @@
-/* ============================================================
-   API TESTER PAGE — consistent with index & company pages
-============================================================ */
-:root {
-  --primary-color: #1f4c7f;
-  --accent-color: #0078d7;
-  --success-color: #16a34a;
-  --text-color: #1e293b;
-  --border-color: #d1d5db;
-  --bg-color: #f9fafc;
-  --light-bg: #ffffff;
-  --muted-text: #64748b;
-  --radius: 8px;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
+/*
+Css for the API Tester Page
 
-/* ============================================================
-   BASE PAGE
-============================================================ */
-body#apibody {
-  font-family: var(--font-family);
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+see comment about AI on the Common.css page
 
+*/
 main.api-container {
   padding: 2.5rem 2rem;
   max-width: 900px;
@@ -37,17 +13,13 @@ main.api-container {
   gap: 2rem;
 }
 
-/* ============================================================
-   HEADER
-============================================================ */
 .api-header {
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
 .api-header h1 {
-  font-size: 2.4rem; /* ✅ larger heading */
-  color: var(--primary-color);
+  font-size: 2.4rem; 
   margin-bottom: 0.3rem;
 }
 
@@ -56,9 +28,6 @@ main.api-container {
   color: var(--muted-text);
 }
 
-/* ============================================================
-   TABLE SECTION
-============================================================ */
 .api-table-section {
   display: flex;
   flex-direction: column;
@@ -68,37 +37,21 @@ main.api-container {
 
 .api-table-section h2 {
   text-align: center;
-  color: var(--primary-color);
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
 table.api-table {
   border-collapse: collapse;
-  width: 95%; /* ✅ slightly wider table */
-  max-width: 850px; /* ✅ still centered, but larger */
-  background: var(--light-bg);
+  width: 95%; 
+  max-width: 850px;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
   overflow: hidden;
   margin: 0 auto;
-  font-size: 1rem; /* ✅ increased font size inside table */
+  font-size: 1rem;
 }
 
-table.api-table th,
-table.api-table td {
-  border: 1px solid var(--border-color);
-  padding: 12px 14px;
-  text-align: left;
-  vertical-align: top;
-}
-
-table.api-table th {
-  background-color: var(--primary-color);
-  color: white;
-  font-weight: 500;
-  font-size: 1.05rem;
-}
 
 table.api-table td ul {
   list-style-type: none;
@@ -121,30 +74,6 @@ table.api-table td a:hover {
   text-decoration: underline;
 }
 
-table.api-table tr:nth-child(even) td {
-  background-color: #f3f6fb;
-}
-
-table.api-table tr:hover td {
-  background-color: #e7eff9;
-  transition: background-color 0.2s ease;
-}
-
-/* ============================================================
-   FOOTER
-============================================================ */
-footer {
-  text-align: center;
-  background-color: #f1f5f9;
-  color: var(--muted-text);
-  padding: 1rem 0;
-  border-top: 1px solid var(--border-color);
-  font-size: 0.9rem;
-}
-
-/* ============================================================
-   RESPONSIVE
-============================================================ */
 @media (max-width: 768px) {
   main.api-container {
     padding: 1rem;
@@ -155,7 +84,4 @@ footer {
     font-size: 0.95rem;
   }
 
-  .api-header h1 {
-    font-size: 1.9rem;
-  }
 }

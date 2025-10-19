@@ -27,10 +27,10 @@ require_once "includes/header.inc.php";
 <head>
     <link rels="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/aboutPage.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
-    <link rel="stylesheet" href="css/header.css">
 
     <main class="about-container">
         <section class="about-header">

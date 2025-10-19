@@ -24,6 +24,7 @@ require_once "includes/meta.inc.php";
 require_once "includes/header.inc.php";
 
 
+
 define("QUERY_PARAM", "symbol");
 
 $hasValidData = false;
@@ -173,6 +174,7 @@ if (isQueryParam(QUERY_PARAM)) {
 <head>
     <link rels="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/companyPage.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body id="companybody">

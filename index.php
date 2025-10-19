@@ -187,6 +187,7 @@ function outputPortfolioList($portfolioList)
 <head>
     <?php require_once "includes/meta.inc.php"; ?>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body id="indexbody">
