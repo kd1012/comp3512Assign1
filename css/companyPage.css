@@ -40,8 +40,13 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-a { color: var(--accent-color); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 /* ---------- “Invalid symbol” card ---------- */
 #symbol_err {
@@ -79,11 +84,23 @@ a:hover { text-decoration: underline; }
   padding: 1.5rem 2rem;
 }
 
-#c_info_ticker h1 { font-size: 1.8rem; margin-bottom: 0.25rem; }
-#c_info_ticker h3 { color: var(--muted-text); font-size: 1rem; margin: 0.25rem 0; }
+#c_info_ticker h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+#c_info_ticker h3 {
+  color: var(--muted-text);
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
 
-#c_info_info { text-align: right; }
-#c_info_info h3 { font-size: 1rem; font-weight: 500; }
+#c_info_info {
+  text-align: right;
+}
+#c_info_info h3 {
+  font-size: 1rem;
+  font-weight: 500;
+}
 
 #c_info_desc {
   grid-column: auto / span 2;
@@ -164,13 +181,12 @@ a:hover { text-decoration: underline; }
   color: var(--primary-color);
 }
 
-/* Optional subtle accents per line (not required) */
-/* .fin_stat:nth-child(2) h3 { color: var(--success-color); } */
-
 /* ============================================================
    TABLE STYLE — keep structure, upgrade visuals/colors
 ============================================================ */
-table, th, td {
+table,
+th,
+td {
   border: 1px solid var(--border-color);
   border-collapse: collapse;
   padding: 10px;
@@ -191,23 +207,50 @@ th {
   font-weight: 500;
 }
 
-td { color: var(--text-color); }
+td {
+  color: var(--text-color);
+}
 
-tr:nth-child(even) td { background: #f3f6fb; }
-tr:hover td { background: #e7eff9; }
+tr:nth-child(even) td {
+  background: #f3f6fb;
+}
+tr:hover td {
+  background: #e7eff9;
+}
 
 /* finance table shares same look */
-.finance-table { width: 100%; }
+.finance-table {
+  width: 100%;
+}
 
 /* ============================================================
    RESPONSIVE
 ============================================================ */
 @media (max-width: 900px) {
-  #c_info { grid-template-columns: 1fr; text-align: left; }
-  #c_info_info { text-align: left; }
+  #c_info {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  #c_info_info {
+    text-align: left;
+  }
 
-  #main_content { grid-template-columns: 1fr; }
+  #main_content {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
 
-  #sidebar { position: static; }
-  main.company-container { padding: 1.25rem; }
+  /* Move financials ABOVE history in mobile view */
+  #sidebar {
+    order: 1;
+    position: static;
+  }
+  #his_tbl {
+    order: 2;
+  }
+
+  main.company-container {
+    padding: 1.25rem;
+  }
 }
