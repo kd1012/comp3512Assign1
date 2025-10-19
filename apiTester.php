@@ -11,7 +11,7 @@ $apiList = [
  * Builds the API list table from an array of [["url1", "url2", ...], "description"]
  */
 function mkApiTbl($apiList) {
-    echo "<table>";
+    echo '<table class="api-table">';
 
     // Make the table headers
     echo "<tr>";
@@ -46,14 +46,16 @@ function mkApiTbl($apiList) {
     <?php require_once "includes/meta.inc.php";?>
     <link rel="stylesheet" href="css/apiTester.css">
 </head>
-<body>
+<body id="apibody">
     <?php require_once "includes/header.inc.php";?>
 <main>
+    <section class="api-header">
     <h2>API List</h2>
+    </section>
+    <section class="api-table-section">
     <?php mkApiTbl($apiList); ?>
+    </section>
 </main>
-<footer>
 
-</footer>
 </body>
 </html>
