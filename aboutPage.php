@@ -1,21 +1,37 @@
+<!-- 
+ Assignment 1 - Portfolio Project
+ COMP 3512 - Web 2
+ Diesel Thomas and Kiera Dowell
+ Fall 2025
+
+ Page Title: About Page
+ Page Description:
+
+
+
+
+
+-->
+
 <?php
 require_once 'includes/config.inc.php';
 require_once 'includes/header.inc.php';
+require_once "includes/meta.inc.php";
+require_once "includes/header.inc.php";
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <?php require_once "includes/meta.inc.php";?>
+    <link rels="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/aboutPage.css">
-    <link rel="stylesheet" href="css/aboutPage.css">
-    <title>About | Portfolio Project</title>
 </head>
+
 <body>
-    <?php require_once "includes/header.inc.php";?>
     <link rel="stylesheet" href="css/header.css">
-  
+
     <main class="about-container">
         <section class="about-header">
             <h1>About This Project</h1>
@@ -25,7 +41,8 @@ require_once 'includes/header.inc.php';
         <section class="about-card project-info">
             <h2>Project Overview</h2>
             <p>
-                This project is part of the COMP 3512 Web 2: Web Application Development course at Mount Royal University. 
+                This project is part of the COMP 3512 Web 2: Web Application Development course at Mount Royal
+                University.
             </p>
         </section>
 
@@ -38,8 +55,8 @@ require_once 'includes/header.inc.php';
             <h2>Git Repository</h2>
             <p>
                 The source code for this project is hosted on GitHub:<br>
-                <a href="https://github.com/yourusername/portfolio-project" target="_blank" class="git-link">
-                    https://github.com/yourusername/portfolio-project
+                <a href="https://github.com/kd1012/comp3512Assign1/" target="_blank" class="git-link">
+                    https://github.com/kd1012/comp3512Assign1/
                 </a>
             </p>
         </section>
@@ -55,4 +72,5 @@ require_once 'includes/header.inc.php';
 
 
 </body>
+
 </html>

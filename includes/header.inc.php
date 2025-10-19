@@ -1,3 +1,20 @@
+<!-- 
+ Assignment 1 - Portfolio Project
+ COMP 3512 - Web 2
+ Diesel Thomas and Kiera Dowell
+ Fall 2025
+
+ Page Title: Header page
+ Page Description:
+
+
+
+
+
+-->
+
+
+
 <header class="site-header">
   <div class="header-left">
     <div class="header-title">Portfolio Project by Diesel and Kiera</div>

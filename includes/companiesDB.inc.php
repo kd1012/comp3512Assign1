@@ -1,4 +1,20 @@
-<?PHP
+<!-- 
+ Assignment 1 - Portfolio Project
+ COMP 3512 - Web 2
+ Diesel Thomas and Kiera Dowell
+ Fall 2025
+
+ Page Title: Companies Database
+ Page Description:
+
+
+
+
+
+-->
+
+
+<?php
 
 /*
  * DB table helper class for companies.

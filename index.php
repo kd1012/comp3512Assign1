@@ -1,3 +1,20 @@
+<!-- 
+ Assignment 1 - Portfolio Project
+ COMP 3512 - Web 2
+ Diesel Thomas and Kiera Dowell
+ Fall 2025
+
+ Page Title: Index Page
+ Page Description:
+ This page acts as a home page.
+
+
+
+
+
+-->
+
+
 <?php
 require_once 'includes/config.inc.php';
 require_once 'includes/databaseHelper.inc.php';

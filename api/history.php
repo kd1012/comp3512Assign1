@@ -1,3 +1,20 @@
+<!-- 
+ Assignment 1 - Portfolio Project
+ COMP 3512 - Web 2
+ Diesel Thomas and Kiera Dowell
+ Fall 2025
+
+ Page Title: History API
+ Page Description:
+
+
+
+
+
+-->
+
+
+
 <?php
 require_once '../includes/config.inc.php';
 require_once '../includes/databaseHelper.inc.php';
@@ -17,7 +34,6 @@ try {
 
     if (isQueryParam(QUERY_PARAM)) {
         $symbol = strtoupper($_GET[QUERY_PARAM]);
-
         $hisData = $hisDB->getHistory($symbol, HistoryDB::ORDER_ASC);
     }
 

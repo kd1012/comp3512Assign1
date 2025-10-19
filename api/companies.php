@@ -1,3 +1,19 @@
+<!-- 
+ Assignment 1 - Portfolio Project
+ COMP 3512 - Web 2
+ Diesel Thomas and Kiera Dowell
+ Fall 2025
+
+ Page Title: Companies Page API
+ Page Description:
+
+
+
+
+
+-->
+
+
 <?php
 require_once '../includes/config.inc.php';
 require_once '../includes/databaseHelper.inc.php';
@@ -37,5 +53,3 @@ if ($hasValidData) {
     echo json_encode($compData, JSON_NUMERIC_CHECK + JSON_PRETTY_PRINT);
 }
 ?>
-
-

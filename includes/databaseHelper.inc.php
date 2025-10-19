@@ -1,3 +1,21 @@
+<!-- 
+ Assignment 1 - Portfolio Project
+ COMP 3512 - Web 2
+ Diesel Thomas and Kiera Dowell
+ Fall 2025
+
+ Page Title: Database Helper
+ Page Description:
+
+
+
+
+
+-->
+
+
+
+
 <?php
 
 /*
