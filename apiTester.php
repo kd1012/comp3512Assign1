@@ -9,10 +9,7 @@
 
 
 
-
-
 -->
-
 
 <?php
 
@@ -63,13 +60,13 @@ function mkApiTbl($apiList) {
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/apiTester.css">
 </head>
-<body id="apibody">
+<body id="api-container">
     <?php require_once "includes/header.inc.php";?>
 <main>
     <section class="api-header">
-    <h2>API List</h2>
+    <h1>API List</h1>
     </section>
-    <section class="api-table-section">
+    <section>
     <?php mkApiTbl($apiList); ?>
     </section>
 </main>

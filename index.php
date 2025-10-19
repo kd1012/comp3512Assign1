@@ -90,8 +90,6 @@ function outputUsersList($customers)
 {
     echo '<div class="customers-panel">';
     echo '<h1> Customers </h1>';
-    echo '<h3> Name </h3>';
-
 
     echo '<ul class="customer-list">';
 
@@ -190,7 +188,7 @@ function outputPortfolioList($portfolioList)
     <link rel="stylesheet" href="css/common.css">
 </head>
 
-<body id="indexbody">
+<body>
     <?php require_once "includes/header.inc.php"; ?>
 
     <main class="content-container">
@@ -207,15 +205,6 @@ function outputPortfolioList($portfolioList)
         </section>
 
     </main>
-
-
-
-    </main>
-
-    <footer>
-
-    </footer>
-
 
 </body>
 

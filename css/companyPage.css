@@ -82,14 +82,12 @@ see comment about AI on the Common.css page
 .fin_stat {
   padding: 10px;
   text-align: center;
-}
-
-.fin_stat h3 {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
   color: var(--primary-color);
 }
+
 
 @media (max-width: 900px) {
   #c_info {
@@ -106,7 +104,6 @@ see comment about AI on the Common.css page
     flex-direction: column;
   }
 
-  /* Move financials ABOVE history in mobile view */
   #sidebar {
     order: 1;
     position: static;

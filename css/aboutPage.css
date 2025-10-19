@@ -5,7 +5,6 @@ see comment about AI on the Common.css page
 
 */
 
-
 main.about-container {
   max-width: 900px;
   margin: 2rem auto;
@@ -20,15 +19,6 @@ main.about-container {
   margin-bottom: 1rem;
 }
 
-.about-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.3rem;
-}
-
-.about-header .subtitle {
-  font-size: 1rem;
-  color: var(--muted-text);
-}
 
 .about-card {
   padding: 1.5rem 2rem;
@@ -70,7 +60,6 @@ main.about-container {
   text-decoration: underline;
   color: #005fa3;
 }
-
 
 @media (max-width: 768px) {
   main.about-container {

@@ -19,16 +19,6 @@ see comment about AI on the Common.css page
   flex-shrink: 0;
 }
 
-.customers-panel h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.customer-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
 .customer-list li {
   display: flex;

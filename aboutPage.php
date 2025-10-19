@@ -35,10 +35,10 @@ require_once "includes/header.inc.php";
     <main class="about-container">
         <section class="about-header">
             <h1>About This Project</h1>
-            <p class="subtitle">COMP 3512 — Portfolio Project</p>
+            <p>COMP 3512 — Portfolio Project</p>
         </section>
 
-        <section class="about-card project-info">
+        <section class="about-card">
             <h2>Project Overview</h2>
             <p>
                 This project is part of the COMP 3512 Web 2: Web Application Development course at Mount Royal
@@ -46,12 +46,12 @@ require_once "includes/header.inc.php";
             </p>
         </section>
 
-        <section class="about-card university-info">
+        <section class="about-card">
             <h2>University</h2>
             <p><strong>Mount Royal University</strong><br>
         </section>
 
-        <section class="about-card git-info">
+        <section class="about-card">
             <h2>Git Repository</h2>
             <p>
                 The source code for this project is hosted on GitHub:<br>
@@ -61,7 +61,7 @@ require_once "includes/header.inc.php";
             </p>
         </section>
 
-        <section class="about-card authors-info">
+        <section class="about-card">
             <h2>Group Members</h2>
             <ul>
                 <li><strong>Diesel Thomas</strong></li>

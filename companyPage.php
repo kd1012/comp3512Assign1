@@ -177,9 +177,9 @@ if (isQueryParam(QUERY_PARAM)) {
     <link rel="stylesheet" href="css/common.css">
 </head>
 
-<body id="companybody">
+<body>
 
-    <main class="company-container">
+    <main>
         <?php if (!$hasValidData) { ?>
 
             <div id="symbol_err">
