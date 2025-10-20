@@ -1,27 +1,21 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: Company Page
- Page Description:
-
-
-
-
-
--->
-
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: Company Page
+ * Page Description:
+ * Displays information about a company, and their stock.
+ *
+ */
+
 require_once 'includes/config.inc.php';
 require_once 'includes/databaseHelper.inc.php';
 require_once 'includes/companiesDB.inc.php';
 require_once 'includes/historyDB.inc.php';
 require_once 'includes/helperFunctions.inc.php';
-require_once "includes/meta.inc.php";
-require_once "includes/header.inc.php";
 
 
 
@@ -172,18 +166,18 @@ if (isQueryParam(QUERY_PARAM)) {
 <html lang="en">
 
 <head>
-    <link rels="stylesheet" href="css/header.css">
+    <?php require_once "includes/meta.inc.php";?>
     <link rel="stylesheet" href="css/companyPage.css">
-    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
+    <?php require_once "includes/header.inc.php";?>
 
     <main>
         <?php if (!$hasValidData) { ?>
 
             <div id="symbol_err">
-                <h3>Invalid Company Symbol was Provided</h3>
+                <p>Invalid Company Symbol was Provided.</p>
                 <a href="index.php">Go Home</a>
             </div>
 

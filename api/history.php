@@ -1,21 +1,17 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: History API
- Page Description:
-
-
-
-
-
--->
-
-
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: History API
+ * Page Description:
+ * JSON API for the history table.
+ * Provides history information about a company from their symbol.
+ *
+ */
+
 require_once '../includes/config.inc.php';
 require_once '../includes/databaseHelper.inc.php';
 require_once '../includes/historyDB.inc.php';

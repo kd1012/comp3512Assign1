@@ -1,21 +1,16 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: Index Page
- Page Description:
- This page acts as a home page.
-
-
-
-
-
--->
-
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: Index Page
+ * Page Description:
+ * This page allows users to select and view a customers portfolio.
+ *
+ */
+
 require_once 'includes/config.inc.php';
 require_once 'includes/databaseHelper.inc.php';
 require_once 'includes/companiesDB.inc.php';
@@ -132,7 +127,7 @@ function outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount
         echo '</div>';
         echo '<div class="summary-card total">';
         echo '<span class="summary-label">Total Value</span>';
-        echo '<span class="summary-value">$' . num2Str($portfolioValue) . '</span>';
+        echo '<span class="summary-value">' . dollar2Str($portfolioValue) . '</span>';
         echo '</div>';
         echo '</div>'; // summary-row
         echo '</div>';
@@ -164,8 +159,8 @@ function outputPortfolioList($portfolioList)
             echo "<td><a href='companyPage.php?symbol=" . $row["symbol"] . "'>" . $row["symbol"] . "</td>";
             echo "<td><a href='companyPage.php?symbol=" . $row["symbol"] . "'>" . $row['name'] . "</td>";
             echo "<td>" . $row['sector'] . "</td>";
-            echo "<td>" . $row['amount'] . "</td>";
-            echo "<td>$" . number_format($row['value'], 2) . "</td>";
+            echo "<td>" . num2Str($row['amount']) . "</td>";
+            echo "<td>" . dollar2Str($row['value']) . "</td>";
             echo "</tr>";
         }
 
@@ -185,7 +180,6 @@ function outputPortfolioList($portfolioList)
 <head>
     <?php require_once "includes/meta.inc.php"; ?>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>

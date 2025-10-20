@@ -1,17 +1,17 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: Portfolio Page API
- Page Description:
-
-
-
--->
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: Portfolio API
+ * Page Description:
+ * JSON API for the portfolio table.
+ * Provides a list of portfolios for a customer from their userId.
+ *
+ */
+
 require_once '../includes/config.inc.php';
 require_once '../includes/databaseHelper.inc.php';
 require_once '../includes/portfolioDB.inc.php';
@@ -31,9 +31,7 @@ try {
     if (isQueryParam(QUERY_PARAM)) {
         $selectedUserId = strtoupper($_GET[QUERY_PARAM]);
 
-        // Put single portfolio in an array to be consistent
-        // with the output of getAllPortfolio
-        $portData = [$portDB->getAllPortfolio($selectedUserId)];
+        $portData = $portDB->getAllPortfolio($selectedUserId);
 
     } 
 

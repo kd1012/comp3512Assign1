@@ -1,22 +1,15 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: Database Helper
- Page Description:
-
-
-
-
-
--->
-
-
-
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: Database Helper Class
+ * Page Description:
+ * Wrapper class for PDO to simplify accessing the database.
+ *
+ */
 
 /*
  * Helper class for PDO.

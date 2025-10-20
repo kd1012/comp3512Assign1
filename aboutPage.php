@@ -1,54 +1,49 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: About Page
- Page Description:
-
-
-
-
-
--->
-
 <?php
-require_once 'includes/config.inc.php';
-require_once 'includes/header.inc.php';
-require_once "includes/meta.inc.php";
-require_once "includes/header.inc.php";
-
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: About Page
+ * Page Description:
+ * Provides information about our project.
+ *
+ */
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <link rels="stylesheet" href="css/header.css">
+    <?php require_once "includes/meta.inc.php"; ?>
     <link rel="stylesheet" href="css/aboutPage.css">
-    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
+    <?php require_once "includes/header.inc.php"; ?>
 
     <main class="about-container">
         <section class="about-header">
             <h1>About This Project</h1>
             <p>COMP 3512 — Portfolio Project</p>
+            <p>Created by Diesel Thomas and Kiera Dowell</p>
         </section>
 
         <section class="about-card">
             <h2>Project Overview</h2>
             <p>
-                This project is part of the COMP 3512 Web 2: Web Application Development course at Mount Royal
-                University.
+                This project is assignment #1 of COMP 3512: Web Application Development course (Web 2) at Mount Royal University.
+                The site provides a way to view customer investment portfolios, and detailed information about companies they are invested in.
+                There are also JSON API endpoints that can be used to request the same raw data from the database.
             </p>
         </section>
 
         <section class="about-card">
-            <h2>University</h2>
-            <p><strong>Mount Royal University</strong><br>
+            <h2>Technologies</h2>
+            <p>
+                Apart from using HTML/CSS in the frontend, the backend is all PHP, and pulls from an SQLite database.
+            </p>
         </section>
 
         <section class="about-card">
@@ -61,13 +56,6 @@ require_once "includes/header.inc.php";
             </p>
         </section>
 
-        <section class="about-card">
-            <h2>Group Members</h2>
-            <ul>
-                <li><strong>Diesel Thomas</strong></li>
-                <li><strong>Kiera Dowell</strong></li>
-            </ul>
-        </section>
     </main>
 
 

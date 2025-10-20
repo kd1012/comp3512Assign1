@@ -1,20 +1,18 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: Companies Page API
- Page Description:
-
-
-
-
-
--->
-
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: Company API
+ * Page Description:
+ * JSON API for the companies table.
+ * Provides either all companies information, or the specified company from
+ * their symbol.
+ *
+ */
+
 require_once '../includes/config.inc.php';
 require_once '../includes/databaseHelper.inc.php';
 require_once '../includes/companiesDB.inc.php';

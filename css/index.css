@@ -39,7 +39,7 @@ see comment about AI on the Common.css page
 }
 
 .customer-list form {
-  margin: 0;
+  margin: 0 0 0 0.5rem;
 }
 
 .customer-list button {
@@ -108,6 +108,10 @@ see comment about AI on the Common.css page
 .summary-card.total .summary-value {
   color: var(--success-color);
   font-size: 1.8rem;
+}
+
+.portfolio-details {
+  margin-top: 0.75rem;
 }
 
 .portfolio-details h3 {

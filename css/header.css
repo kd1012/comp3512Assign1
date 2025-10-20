@@ -49,6 +49,7 @@ see comment about AI on the Common.css page
 
 .nav-links a:hover {
   background-color: #005fa3;
+  text-decoration: none;
   transform: translateY(-1px);
 }
 

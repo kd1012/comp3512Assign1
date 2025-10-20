@@ -1,17 +1,15 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: API Tester Page
- Page Description:
-
-
-
--->
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: API Tester Page
+ * Page Description:
+ * Provides example links for the JSON API.
+ *
+ */
 
 $apiList = [
     [["api/companies.php"], "Returns a list of all companies information."],
@@ -57,14 +55,14 @@ function mkApiTbl($apiList) {
 <html lang="en">
 <head>
     <?php require_once "includes/meta.inc.php";?>
-    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/apiTester.css">
 </head>
-<body id="api-container">
+<body>
     <?php require_once "includes/header.inc.php";?>
-<main>
+<main class="api-container">
     <section class="api-header">
     <h1>API List</h1>
+    <p>Example links for the JSON API</p>
     </section>
     <section>
     <?php mkApiTbl($apiList); ?>

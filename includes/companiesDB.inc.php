@@ -1,20 +1,15 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: Companies Database
- Page Description:
-
-
-
-
-
--->
-
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: Companies Database Helper Class
+ * Page Description:
+ * Helper class for accessing the companies table.
+ *
+ */
 
 /*
  * DB table helper class for companies.

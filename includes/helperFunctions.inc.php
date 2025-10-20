@@ -1,21 +1,15 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: Helpers Function page
- Page Description:
-
-
-
-
-
--->
-
-
-
 <?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: Helper functions
+ * Page Description:
+ * Common functions for use in multiple pages.
+ *
+ */
 
 /*
  * Converts float values into rounded dollar strings.

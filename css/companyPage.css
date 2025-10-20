@@ -5,6 +5,34 @@ see comment about AI on the Common.css page
 
 */
 
+#symbol_err {
+  padding: 1.5rem;
+  margin: 10px;
+  text-align: center;
+}
+
+#symbol_err a {
+  margin: 0.5rem;
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#symbol_err a:hover {
+  background-color: #005fa3;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+#symbol_err a:active {
+  transform: translateY(0);
+}
+
 #c_info {
   display: grid;
   grid-template-columns: auto auto;
@@ -38,10 +66,11 @@ see comment about AI on the Common.css page
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto auto;
   gap: 10px;
+  padding: 10px;
 }
 
 #his_tbl {
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 #his_tbl_header {
@@ -53,7 +82,7 @@ see comment about AI on the Common.css page
 }
 
 #sidebar {
-  top: 10px;
+  top: 6rem;
   position: sticky;
   display: grid;
   gap: 10px;
@@ -66,10 +95,10 @@ see comment about AI on the Common.css page
 
 #fin_tbl_header {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 0.4rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.8rem;
 }
 
 #fin_tbl_err {
@@ -107,6 +136,7 @@ see comment about AI on the Common.css page
   #sidebar {
     order: 1;
     position: static;
+    align-self: auto;
   }
   #his_tbl {
     order: 2;

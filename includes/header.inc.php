@@ -1,18 +1,16 @@
-<!-- 
- Assignment 1 - Portfolio Project
- COMP 3512 - Web 2
- Diesel Thomas and Kiera Dowell
- Fall 2025
-
- Page Title: Header page
- Page Description:
-
-
-
-
-
--->
-
+<?php
+/*
+ * Assignment 1 - Portfolio Project
+ * COMP 3512 - Web 2, Mount Royal University
+ * Diesel Thomas and Kiera Dowell
+ * Fall 2025
+ *
+ * Page Title: Header HTML
+ * Page Description:
+ * Common header HTML to be included in every page.
+ *
+ */
+?>
 
 
 <header class="site-header">
