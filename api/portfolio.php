@@ -2,7 +2,7 @@
 /*
  * Assignment 1 - Portfolio Project
  * COMP 3512 - Web 2, Mount Royal University
- * Diesel Thomas and Kiera Dowell
+ * Kiera Dowell and Diesel Thomas
  * Fall 2025
  *
  * Page Title: Portfolio API

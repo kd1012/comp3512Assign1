@@ -1,5 +1,5 @@
 # COMP 3512 Assignment 1
-Created by Diesel and Kiera
+Created by Kiera Dowell and Diesel Thomas
 
 ***
 

@@ -2,7 +2,7 @@
 /*
  * Assignment 1 - Portfolio Project
  * COMP 3512 - Web 2, Mount Royal University
- * Diesel Thomas and Kiera Dowell
+ * Kiera Dowell and Diesel Thomas
  * Fall 2025
  *
  * Page Title: About Page
@@ -27,7 +27,7 @@
         <section class="about-header">
             <h1>About This Project</h1>
             <p>COMP 3512 — Portfolio Project</p>
-            <p>Created by Diesel Thomas and Kiera Dowell</p>
+            <p>Created by Kiera Dowell and Diesel Thomas</p>
         </section>
 
         <section class="about-card">

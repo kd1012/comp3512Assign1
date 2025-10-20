@@ -2,7 +2,7 @@
 /*
  * Assignment 1 - Portfolio Project
  * COMP 3512 - Web 2, Mount Royal University
- * Diesel Thomas and Kiera Dowell
+ * Kiera Dowell and Diesel Thomas
  * Fall 2025
  *
  * Page Title: Header HTML
@@ -15,7 +15,7 @@
 
 <header class="site-header">
   <div class="header-left">
-    <div class="header-title">Portfolio Project by Diesel and Kiera</div>
+    <div class="header-title">Portfolio Project by Kiera and Diesel</div>
     <div class="header-subtitle">(COMP3512)</div>
   </div>
 
