@@ -19,8 +19,6 @@ main.api-container {
   margin-bottom: 1rem;
 }
 
-
-
 table.api-table {
   border-collapse: collapse;
   box-shadow: var(--shadow);

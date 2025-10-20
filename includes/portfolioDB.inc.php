@@ -20,7 +20,7 @@ class PortfolioDB {
     private static $SQL_FROM = "FROM portfolio ";
     private static $SQL_ALL_ATTRS = "id, userId, guid, symbol, amount ";
     private $db;
-
+    
     /*
      * Takes in a DatabaseHelper object.
      */

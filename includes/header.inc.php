@@ -12,7 +12,6 @@
  */
 ?>
 
-
 <header class="site-header">
   <div class="header-left">
     <div class="header-title">Portfolio Project by Kiera and Diesel</div>

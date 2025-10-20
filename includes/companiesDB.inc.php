@@ -8,6 +8,7 @@
  * Page Title: Companies Database Helper Class
  * Page Description:
  * Helper class for accessing the companies table.
+ * Similar to those found in Lab14a
  *
  */
 

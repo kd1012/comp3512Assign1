@@ -32,7 +32,6 @@ try {
         $selectedUserId = strtoupper($_GET[QUERY_PARAM]);
 
         $portData = $portDB->getAllPortfolio($selectedUserId);
-
     } 
 
     $db->disconnect();

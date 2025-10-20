@@ -20,7 +20,6 @@ class HistoryDB {
     public const ORDER_NONE = 0;
     public const ORDER_DESC = 1;
     public const ORDER_ASC  = 2;
-
     private static $SQL_FROM = "FROM history ";
     private static $SQL_ALL_ATTRS = "id, symbol, date, volume,
                                     open, close, high, low ";

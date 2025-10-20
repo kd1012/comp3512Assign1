@@ -9,12 +9,14 @@ to prompt it back and forth multiple times until I got something I liked, and th
 myself in order to further make it what we were looking for. I did the same thing for each css file, in order for it to match
 the other pages.
 
-So the css main ideas was from chatgpt, but it was heavily edited by me in order to turn it into the finished
+So the css main ideas was from chatgpt, but it was heavily edited in order to turn it into the finished
 product that you see here.
 
 
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -53,8 +55,7 @@ main.page {
   padding: 2rem;
 }
 
-
-h1, h2, h3 {
+h1,h2,h3 {
   color: var(--primary-color);
   font-weight: 600;
 }
@@ -64,14 +65,33 @@ a {
   text-decoration: none;
   font-weight: 500;
 }
-a:hover { text-decoration: underline; }
+
+a:hover {
+  text-decoration: underline;
+}
 
 
-.text-center { text-align: center; }
-.muted { color: var(--muted-text); }
-.sticky { position: sticky; top: 10px; }
-.container { max-width: 900px; margin: 0 auto; }
-.section { margin-bottom: 1.5rem; }
+.text-center {
+  text-align: center;
+}
+
+.muted {
+  color: var(--muted-text);
+}
+
+.sticky {
+  position: sticky;
+  top: 10px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
 
 .card {
   background-color: var(--light-bg);
@@ -79,13 +99,27 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--shadow);
   padding: 1.25rem;
 }
-.card.pad-lg { padding: 1.75rem 2rem; }
-.card.accent-left { border-left: 4px solid var(--primary-color); }
 
-#c_info, #his_tbl, #fin_tbl, .fin_stat,
-.customers-panel, .portfolio-panel,
-.error-card, .finance-panel, .history-panel,
-.stats-panel, .about-card, #symbol_err {
+.card.pad-lg {
+  padding: 1.75rem 2rem;
+}
+
+.card.accent-left {
+  border-left: 4px solid var(--primary-color);
+}
+
+#c_info,
+#his_tbl,
+#fin_tbl,
+.fin_stat,
+.customers-panel,
+.portfolio-panel,
+.error-card,
+.finance-panel,
+.history-panel,
+.stats-panel,
+.about-card,
+#symbol_err {
   background-color: var(--light-bg);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -96,22 +130,32 @@ table {
   border-collapse: collapse;
   background: var(--light-bg);
   border-radius: var(--radius);
-  overflow: hidden; /* rounded corners on header row */
+  overflow: hidden;
+  /* rounded corners on header row */
   box-shadow: var(--shadow);
   font-size: 0.95rem;
 }
-th, td {
+
+th,
+td {
   border: 1px solid var(--border-color);
   padding: 10px;
   text-align: left;
 }
+
 th {
   background: var(--primary-color);
   color: #fff;
   font-weight: 500;
 }
-tr:nth-child(even) td { background: #f3f6fb; }
-tr:hover td { background: #e7eff9; }
+
+tr:nth-child(even) td {
+  background: #f3f6fb;
+}
+
+tr:hover td {
+  background: #e7eff9;
+}
 
 .table-narrow {
   width: 95%;
@@ -126,13 +170,17 @@ tr:hover td { background: #e7eff9; }
   cursor: pointer;
   transition: all 0.2s ease;
 }
+
 .btn-secondary {
   background-color: var(--accent-color);
   color: white;
   padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
 }
-.btn-secondary:hover { background-color: #005fa3; }
+
+.btn-secondary:hover {
+  background-color: #005fa3;
+}
 
 .content-row {
   display: flex;
@@ -140,14 +188,21 @@ tr:hover td { background: #e7eff9; }
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
 .grid-2-1 {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1.5rem;
 }
+
 @media (max-width: 900px) {
-  main.page { padding: 1.25rem; }
-  .grid-2-1 { grid-template-columns: 1fr; }
+  main.page {
+    padding: 1.25rem;
+  }
+
+  .grid-2-1 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section-title {

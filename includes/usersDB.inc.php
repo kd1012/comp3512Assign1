@@ -42,14 +42,6 @@ class UsersDB {
         return $this->db->fetchAll($sql);
     }
 
-
-
-    // TODO: If we need to JOIN tables, do it in the class that will be the FROM table.
-    // Ex. "SELECT ... FROM users ... INNER JOIN portfolio ON ..." would end up here.
-    // More than likely all joins will be in here.
-
-
-
 }
 
 ?>

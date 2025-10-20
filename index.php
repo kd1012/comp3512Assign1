@@ -81,6 +81,10 @@ function getUserID()
     return (int) $_GET['userId'];
 }
 
+/*
+Outputting the customer list/user list on the left hand side of the screen
+*/
+
 function outputUsersList($customers)
 {
     echo '<div class="customers-panel">';
@@ -96,15 +100,16 @@ function outputUsersList($customers)
         echo '<button type="sumbit" class="btn btn-secondary"> Portfolio </button>';
         echo '</form>';
         echo '</li>';
-
     }
 
     echo '</ul>';
     echo '</div>';
-
-
 }
 
+/*
+This outputs the portfolio summary if a userId is found in the query string
+If it does not find a userId then it outputs the placeholder message
+*/
 function outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount, $portfolioValue)
 {
 
@@ -140,6 +145,9 @@ function outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount
 
 }
 
+/*
+This outputs the table of companys under "portfolio details"
+*/
 function outputPortfolioList($portfolioList)
 {
 
@@ -169,10 +177,7 @@ function outputPortfolioList($portfolioList)
     }
 }
 
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -186,20 +191,14 @@ function outputPortfolioList($portfolioList)
     <?php require_once "includes/header.inc.php"; ?>
 
     <main class="content-container">
-
-
         <?php outputUsersList($customers); ?>
-
-
         <section class="portfolio-panel">
             <?php
             outputPortfolioSummary($selectedUserId, $companyCount, $portfolioAmount, $portfolioValue);
             outputPortfolioList($portfolioList);
             ?>
         </section>
-
     </main>
-
 </body>
 
 </html>
